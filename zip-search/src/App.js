@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
 
@@ -7,6 +6,8 @@ class ZipInfo extends Component {
   constructor(props){
     super(props);
     this.state = {
+      firstPage: true,
+      zipCode: "11102",
       data: [
             {
                 LocationText: "CityName",
@@ -18,6 +19,18 @@ class ZipInfo extends Component {
             }
         ]
     };
+    this.handleClick = this.handleClick.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleClick() {
+      this.setState ({
+          firstPage : false,
+      });
+  }
+  handleChange (event) {
+    this.setState({
+        zipCode: event.target.value
+    });
   }
   fetchZipData(zipcode){
     axios.get("https://ctp-zip-api.herokuapp.com/zip/" + zipcode)
@@ -38,13 +51,22 @@ class ZipInfo extends Component {
   }
 
   render(){
-    this.fetchZipData(this.props.zipcode);
-    var cities = this.state.data.map((city)=>
-      <ParticularCity data={city}/>
-    );
-    return(
-      <p>{cities}</p>
-    );
+    if (this.state.firstPage) {
+      return (
+          <div >
+              <input type='text' value = {this.state.zipCode} onChange={this.handleChange}/>
+              <button className= "button" onClick={this.handleClick}>Submit</button>
+          </div>
+      );
+    } else {
+      this.fetchZipData(this.state.zipCode);
+      var cities = this.state.data.map((city)=>
+        <ParticularCity data={city}/>
+      );
+      return(
+        <p>{cities}</p>
+      );
+    }
   }
 }
 
@@ -72,10 +94,7 @@ class ParticularCity extends Component {
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <h2>Cryptocurrency Ticker</h2>
-        </div>
+      <div>
         <ZipInfo zipcode="10016"/>
       </div>
     );
