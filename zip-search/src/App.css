@@ -1,14 +1,14 @@
 /*Custom CSS Code*/
-.centered{
-  text-align: center;
-  padding: 20px 30rem 50px 30rem;
-}
+
 .container{
+  display:block;
+  margin: 0 auto;
+  text-align: center;
   padding: 1rem 2rem 2rem;
   margin: 1rem;
   border-radius: 0.5rem;
   min-width: 9rem;
-  width: auto;
+  width: 50%;
   border: solid 13px rgba(0, 0, 0, 0.05);
   background-color: #FDEDEC;
 }
@@ -22,6 +22,7 @@
 }
 
 .App-header {
+  width: 100%;
   background-color: #282c34;
   min-height: 10vh;
   display: flex;
@@ -76,17 +77,12 @@ input[type=text], select {
   color: white;
 }
 
-.zipList {
+.cityList {
   display:block;
   margin: 0 auto;
-  width: 20%;
-  color: white;
-  list-style-type: none;
-  background: #414c61;
-  border: 1px solid #282c34;
-  border-radius: 4px;
-  padding: 20px;
+  width: 40%;
   text-align: center;
   margin-bottom: 2%;
+  margin-left: 35%;
 }
 

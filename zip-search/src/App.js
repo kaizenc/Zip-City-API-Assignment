@@ -58,8 +58,9 @@ class ZipInfo extends Component {
     if (this.state.firstPage) {
       return (
         <div>
-          <h1>Zip Code City Search</h1>
-          <input type='text' value = {this.state.zipCode} onChange={this.handleChange}/>
+          <h1 className = "App-header">Zip Code Search </h1>
+          <h2  className = "App-subheader">Zip Code: 
+          <input type='text' value = {this.state.zipCode} onChange={this.handleChange}/> </h2>
           <button className= "button" onClick={this.handleClick}>Submit</button>
         </div>
       );
@@ -73,7 +74,9 @@ class ZipInfo extends Component {
       }
       return(
         <div>
-        {cities}
+        <h1 className = "App-header">Zip Code Search Results</h1>
+        <h2 className = "App-subheader">Zip Code: {this.state.zipCode}</h2>
+        <div className = "cityList">{cities}</div>
         <button className= "button" onClick={this.handleClick}>Try Again</button>
         </div>
       );
