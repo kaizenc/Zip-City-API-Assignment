@@ -7,12 +7,8 @@ class CityInfo extends Component {
     super(props);
     this.state = {
       firstPage: true,
-      zipcodes: ["10010"] ,
-<<<<<<< HEAD
-      city: "QUEENS",    
-=======
-      city: "QUEENS",
->>>>>>> f7c1305db0571749e1b24682590642b5c50a156b
+      zipcodes: ["Can't find this city"] ,
+      city: "Try New York",
     };
     this.handleClick = this.handleClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -28,20 +24,25 @@ class CityInfo extends Component {
   }
 
   handleClick() {
+    var upperCaseCity = this.state.city.toUpperCase();
       this.setState ({
           firstPage : false,
+          city: upperCaseCity,
       });
   }
   handleChange (event) {
+    
     this.setState({
-        city: event.target.value
+        city:  event.target.value
     });
 }
   render() {
     if (this.state.firstPage) {
       return (
           <div >
-              <input type='text' value = {this.state.city} onChange={this.handleChange}/>
+            <h1>City Search </h1>
+            <p>City: <input type='text' value = {this.state.city} onChange={this.handleChange}/></p>
+              
               <button className= "buttom" onClick={this.handleClick}>Edit</button>
           </div>
       );
@@ -50,8 +51,15 @@ class CityInfo extends Component {
       var zipcodes = this.state.zipcodes.map((zipcode)=>
       <ParticularZip data={zipcode}/>
     );
+    var correctCity = this.state.city.toLowerCase();
+    correctCity = correctCity.charAt(0).toUpperCase() + correctCity.slice(1);
     return(
-      <ul>{zipcodes}</ul>
+      <div>
+        <h1>City Search Results</h1>
+        <h2>City: {correctCity}</h2>
+        <ul>{zipcodes}</ul>
+      </div>
+
     );
   }
   }
