@@ -22,52 +22,65 @@ class ZipInfo extends Component {
   fetchZipData(zipcode){
     axios.get("https://ctp-zip-api.herokuapp.com/zip/" + zipcode)
     .then(response => {
-      var wanted = ["LocationText", "State", "Lat", "Long", "EstimatedPopulation", "TotalWages"];
-      var result = response.data.filter(currency => wanted.includes(currency.id));
+      var result = response.data.map(city => {
+        return {
+          LocationText: city.LocationText,
+          State: city.State,
+          Lat: city.Lat,
+          Long: city.Long,
+          EstimatedPopulation: city.EstimatedPopulation,
+          TotalWages: city.TotalWages,
+        };
+      });
       this.setState({data:result});
     })
     .catch(err => console.log(err));
   }
 
   render(){
-    this.fetchZipData(10016);
+    this.fetchZipData(this.props.zipcode);
+    var cities = this.state.data.map((city)=>
+      <ParticularCity data={city}/>
+    );
     return(
-      <p>hello</p>
+      <p>{cities}</p>
     );
   }
 }
 
 class ParticularCity extends Component {
-
-  render() {
+  render(){
       var {
-          locationText,
-          lat,
-          long,
-          estimatedPopulation,
-          totalWages,
+          LocationText,
+          Lat,
+          Long,
+          EstimatedPopulation,
+          TotalWages,
       } = this.props.data;
       return (
           <li>
-              <p>{locationText}</p>
-              <p>{lat}</p>
-              <p>{long}</p>
-              <p>{estimatedPopulation}</p>
-              <p>{totalWages}</p>
+              <p>{LocationText}</p>
+              <p>{Lat}</p>
+              <p>{Long}</p>
+              <p>{EstimatedPopulation}</p>
+              <p>{TotalWages}</p>
           </li>
       );
   }
-}
-
-class ZipInfo extends Component {
-
 }
 
 class App extends Component {
   render() {
     return (
       <div className="App">
+<<<<<<< HEAD
         <Tickers />
+=======
+        <div className="App-header">
+          <h2>Cryptocurrency Ticker</h2>
+        </div>
+        <ZipInfo zipcode="10016"/>
+>>>>>>> kaizen
       </div>
     );
   }
