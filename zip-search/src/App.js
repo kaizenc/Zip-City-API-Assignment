@@ -73,14 +73,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-<<<<<<< HEAD
-        <Tickers />
-=======
         <div className="App-header">
           <h2>Cryptocurrency Ticker</h2>
         </div>
         <ZipInfo zipcode="10016"/>
->>>>>>> kaizen
       </div>
     );
   }
