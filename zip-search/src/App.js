@@ -57,7 +57,8 @@ class ZipInfo extends Component {
   render(){
     if (this.state.firstPage) {
       return (
-        <div >
+        <div>
+          <h1>Zip Code City Search</h1>
           <input type='text' value = {this.state.zipCode} onChange={this.handleChange}/>
           <button className= "button" onClick={this.handleClick}>Submit</button>
         </div>
