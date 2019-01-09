@@ -18,7 +18,7 @@ class CityInfo extends Component {
     axios.get("https://ctp-zip-api.herokuapp.com/city/" + city)
     .then(response => {
       var result = response.data;
-      this.setState({zip:result});
+      this.setState({zipcodes:result});
     })
     .catch(err => console.log(err));
   }
@@ -42,7 +42,7 @@ class CityInfo extends Component {
           </div>
       );
   } else {
-      this.fetchCityData(this.props.city);
+      this.fetchCityData(this.state.city);
       var zipcodes = this.state.zipcodes.map((zipcode)=>
       <ParticularZip data={zipcode}/>
     );
