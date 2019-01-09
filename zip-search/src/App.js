@@ -8,7 +8,7 @@ class ZipInfo extends Component {
     this.state = {
       getSuccess: true,
       firstPage: true,
-      zipCode: "11102",
+      zipCode: "Try 11102",
       data: [
             {
                 LocationText: "CityName",
@@ -58,7 +58,8 @@ class ZipInfo extends Component {
     if (this.state.firstPage) {
       return (
         <div >
-          <input type='text' value = {this.state.zipCode} onChange={this.handleChange}/>
+          <h1 className = "App-header">Zip Search </h1>
+          <h2  className = "App-subheader">Zip: <input type='text' value = {this.state.zipCode} onChange={this.handleChange}/></h2>
           <button className= "button" onClick={this.handleClick}>Submit</button>
         </div>
       );
@@ -72,7 +73,9 @@ class ZipInfo extends Component {
       }
       return(
         <div>
-        <p>{cities}</p>
+            <h1 className = "App-header">Zip Code Search Results</h1>
+          <h2 className = "App-subheader">Zip Code: {this.state.zipCode}</h2>
+          <p>{cities}</p>
         <button className= "button" onClick={this.handleClick}>Try Again</button>
         </div>
       );

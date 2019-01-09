@@ -6,6 +6,7 @@ class CityInfo extends Component {
   constructor(props){
     super(props);
     this.state = {
+      getSuccess: true,
       firstPage: true,
       zipcodes: ["Can't find this city"] ,
       city: "Try New York",
@@ -18,15 +19,21 @@ class CityInfo extends Component {
     axios.get("https://ctp-zip-api.herokuapp.com/city/" + city)
     .then(response => {
       var result = response.data;
-      this.setState({zipcodes:result});
+      this.setState({zipcodes:result, getSuccess:true});
     })
-    .catch(err => console.log(err));
+    .catch(err => {
+      console.log(err);
+      this.setState({getSuccess:false});
+    });
   }
 
   handleClick() {
     var upperCaseCity = this.state.city.toUpperCase();
+    if (!this.state.firstPage) {
+      upperCaseCity = "Try New York"
+    };
       this.setState ({
-          firstPage : false,
+          firstPage : !this.state.firstPage,
           city: upperCaseCity,
       });
   }
@@ -40,24 +47,28 @@ class CityInfo extends Component {
     if (this.state.firstPage) {
       return (
           <div >
-            <h1>City Search </h1>
-            <p>City: <input type='text' value = {this.state.city} onChange={this.handleChange}/></p>
+            <h1 className = "App-header">City Search </h1>
+            <h2  className = "App-subheader">City: <input classname="inputLine" type='text' value = {this.state.city} onChange={this.handleChange}/></h2>
               
-              <button className= "buttom" onClick={this.handleClick}>Edit</button>
+              <button className= "button" onClick={this.handleClick}>Submit</button>
           </div>
       );
   } else {
       this.fetchCityData(this.state.city);
-      var zipcodes = this.state.zipcodes.map((zipcode)=>
-      <ParticularZip data={zipcode}/>
-    );
+      var zipcodes = (<p>City Not Found</p>);
+      if(this.state.getSuccess){
+        var zipcodes = this.state.zipcodes.map((zipcode)=>
+        <ParticularZip data={zipcode}/>
+        );
+      }; 
     var correctCity = this.state.city.toLowerCase();
     correctCity = correctCity.charAt(0).toUpperCase() + correctCity.slice(1);
     return(
       <div>
-        <h1>City Search Results</h1>
-        <h2>City: {correctCity}</h2>
-        <ul>{zipcodes}</ul>
+        <h1 className = "App-header">City Search Results</h1>
+        <h2 className = "App-subheader">City: {correctCity}</h2>
+        <ul className = "zipList">{zipcodes}</ul>
+        <button className= "button" onClick={this.handleClick}>Try Again</button>
       </div>
 
     );
@@ -71,6 +82,7 @@ class ParticularZip extends Component {
       return (
           <li>
               <p>{zip}</p>
+              
           </li>
       );
   }
