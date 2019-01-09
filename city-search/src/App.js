@@ -2,116 +2,73 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import './App.css';
+import axios from 'axios';
 
-class Cryptocurrency extends Component {
+class ParticularZip extends Component {
 
   render() {
       var {
-          id,
-          name,
-          symbol,
-          price_usd,
-          percent_change_1h,
-          percent_change_24h,
-          percent_change_7d,
+          zip,
       } = this.props.data;
       return (
-          <li className={"cryptocurrency " + id}>
-              <p className="cryptocurrency-name">{name} ({symbol})</p>
-              <h1>${ (+price_usd).toFixed(2) }</h1>
-              <p>{percent_change_1h}% 1hr</p>
-              <p>{percent_change_24h}% 24hrs</p>
-              <p>{percent_change_7d}% 7days</p>
+          <li>
+              <p>{zip}</p>
           </li>
       );
   }
 }
 
-class Tickers extends Component {
-
-  constructor(props) {
-      super(props);
-      this.state = {
-          data: [
-              {
-                  id: "bitcoin",
-                  name: "Bitcoin",
-                  symbol: "BTC",
-                  price_usd: "1",
-                  percent_change_1h: "0",
-                  percent_change_24h: "0",
-                  percent_change_7d: "0",
-              },
-              {
-                  id: "ethereum",
-                  name: "Ethereum",
-                  symbol: "ETH",
-                  price_usd: "1",
-                  percent_change_1h: "0",
-                  percent_change_24h: "0",
-                  percent_change_7d: "0",
-              },
-              {
-                  id: "litecoin",
-                  name: "Litecoin",
-                  symbol: "LTC",
-                  price_usd: "1",
-                  percent_change_1h: "0",
-                  percent_change_24h: "0",
-                  percent_change_7d: "0",
-              }
-          ]
-      };
+class CityInfo extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      data: [
+            {
+                Zip: "00000",
+            }
+        ]
+    };
+  }
+  fetchZipData(city){
+    axios.get("https://ctp-zip-api.herokuapp.com/city/" + city)
+    .then(response => {
+      var result = response.data;
+      this.setState({data:result});
+    })
+    .catch(err => console.log(err));
   }
 
-  componentDidMount() {
-      this.fetchCryptocurrencyData();
-      this.interval = setInterval(() => this.fetchCryptocurrencyData(), 60 * 1000);
-  }
-
-  fetchCryptocurrencyData() {
-      axios.get("https://api.coinmarketcap.com/v1/ticker/?limit=10")
-          .then(response => {
-              var wanted = ["bitcoin", "ethereum", "litecoin"];
-              var result = response.data.filter(currency => wanted.includes(currency.id));
-              this.setState({ data: result});
-          })
-          .catch(err => console.log(err));
-  }
-
-  render() {
-      var tickers = this.state.data.map((currency) =>
-          <Cryptocurrency data={currency} key={currency.id} />
-      );
-      return (
-          <div className="tickers-container">
-              <ul className="tickers">{tickers}</ul>
-              <p>Information updated every minute courtesy of coinmarketcap.com</p>
-         </div>
-      );
+  render(){
+    this.fetchZipData("QUEENS");
+    return(
+      <p>hello</p>
+    );
   }
 }
 
+
 class App extends Component {
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+    if (this.state.firstPage) {
+      return (
+          <div className = "divMain">                
+              <p className= "textFirst">{this.state.fname}</p>
+              <p className= "textFirst">{this.state.lname}</p>
+              <button className= "buttom" onClick={this.handleClickEdit}>Edit</button>
+          </div> 
+      );                
+  } else {
+      return (
+          <div className = "divMain">
+              <p>You can edit First name and Last name here: </p>
+              <p><input className= "textSecond" type='text' value={this.state.fname} onChange={this.handleFNameChange}/></p>
+              <p><input className= "textSecond" type='text' value={this.state.lname} onChange={this.handleLNameChange}/></p>
+              <p><button className= "buttom" onClick={this.handleClickSave}>Save</button></p>
+              <p><button className= "buttom" onClick={this.handleClickCancel}>Cancel</button></p>
+         </div>
+      ); 
+  }
   }
 }
 
