@@ -1,0 +1,226 @@
+[33mcommit 34e6c86ab953aefcb0caecca4f780c00f760cc4d[m[33m ([m[1;36mHEAD -> [m[1;32mliudmila[m[33m, [m[1;31morigin/liudmila[m[33m)[m
+Author: Liudmila Zyrianova <liudmila.zyrianova@gmail.com>
+Date:   Wed Jan 9 14:01:20 2019 -0500
+
+    More changes in css
+
+[33mcommit ffc928a852fb95030743c44abc260f3c45e9e2a9[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: f66f095 718eee6
+Author: kaizenc <imgtn159@gmail.com>
+Date:   Wed Jan 9 13:33:12 2019 -0500
+
+    Merge branch 'kaizen'
+
+[33mcommit 718eee6d7bc2307b010073f12bf15957fdd6434c[m
+Author: kaizenc <imgtn159@gmail.com>
+Date:   Wed Jan 9 13:32:36 2019 -0500
+
+    just added a title
+
+[33mcommit f66f095cc1628fb0869eaeba515b64e871d58e0b[m
+Merge: a66cf41 303a616
+Author: LiudmilaZyrianova239 <42779426+LiudmilaZyrianova239@users.noreply.github.com>
+Date:   Wed Jan 9 13:22:09 2019 -0500
+
+    Merge pull request #2 from kaizenc/liudmila
+    
+    Add CSS files for both zip and city
+
+[33mcommit 303a616ff85d81aab43babb01ec1784cdf3f3306[m
+Author: Liudmila Zyrianova <liudmila.zyrianova@gmail.com>
+Date:   Wed Jan 9 13:19:37 2019 -0500
+
+    Add CSS files for both zip and city
+
+[33mcommit 3c683ae5fec42158a46b8cd30c96a00ea66ddc01[m
+Author: kaizenc <imgtn159@gmail.com>
+Date:   Wed Jan 9 12:29:55 2019 -0500
+
+    Styling on zip-search complete
+
+[33mcommit a66cf41e43f3b9684e928f662bc3aff74b66a5b3[m
+Merge: 4701c37 4708e99
+Author: kaizenc <imgtn159@gmail.com>
+Date:   Wed Jan 9 12:15:55 2019 -0500
+
+    Merge remote-tracking branch 'origin/liudmila'
+
+[33mcommit 4708e998c0a95556aa2a6bf605d25ddf60b34fb1[m
+Author: Liudmila Zyrianova <liudmila.zyrianova@gmail.com>
+Date:   Wed Jan 9 12:15:31 2019 -0500
+
+    Add Correct Button
+
+[33mcommit 4701c3740ad25a003243e6a9ad2a2c87c03a8073[m
+Author: kaizenc <imgtn159@gmail.com>
+Date:   Wed Jan 9 12:11:32 2019 -0500
+
+    Added descriptors to data
+
+[33mcommit 15d4cb74c6159b136967879b49f28d04717305e3[m
+Author: kaizenc <imgtn159@gmail.com>
+Date:   Wed Jan 9 12:06:15 2019 -0500
+
+    "Zip Code Not Found" and try again added
+
+[33mcommit 543a9913972cdf9ecf56d5fa663dbe8f52a65716[m
+Author: kaizenc <imgtn159@gmail.com>
+Date:   Wed Jan 9 11:57:48 2019 -0500
+
+    zip-search complete
+
+[33mcommit d744999a4eb44269a6e59cd2aa5a31a0e79dd29a[m
+Merge: 739ea71 f7c1305
+Author: Liudmila Zyrianova <liudmila.zyrianova@gmail.com>
+Date:   Wed Jan 9 11:54:23 2019 -0500
+
+    Resolved merge conflict
+
+[33mcommit 739ea714df4f74b0378589c9de0e1c3b8bb5a0e8[m
+Merge: db13292 b0200f5
+Author: Liudmila Zyrianova <liudmila.zyrianova@gmail.com>
+Date:   Wed Jan 9 11:51:28 2019 -0500
+
+    Attempt to resolve display problem
+
+[33mcommit f7c1305db0571749e1b24682590642b5c50a156b[m
+Author: kaizenc <imgtn159@gmail.com>
+Date:   Wed Jan 9 11:49:13 2019 -0500
+
+    city search works
+
+[33mcommit 2423a1c0a3a098f744024dcf0997f68277d17dd0[m
+Merge: b0200f5 db13292
+Author: kaizenc <imgtn159@gmail.com>
+Date:   Wed Jan 9 11:45:15 2019 -0500
+
+    Merge remote-tracking branch 'origin/liudmila'
+
+[33mcommit db132928ad7918e44fdfd836934d7123ed7cd80f[m
+Author: Liudmila Zyrianova <liudmila.zyrianova@gmail.com>
+Date:   Wed Jan 9 11:42:54 2019 -0500
+
+    Add Button
+
+[33mcommit b0200f5ed81ca539b5f4e13cf649137a0146ef4c[m
+Merge: 22fe28b f69efd5
+Author: kaizenc <imgtn159@gmail.com>
+Date:   Wed Jan 9 11:33:42 2019 -0500
+
+    Merge branch 'kaizen'
+
+[33mcommit f69efd5eedd2411ef411ed767efb5585560c3555[m
+Author: kaizenc <imgtn159@gmail.com>
+Date:   Wed Jan 9 11:21:18 2019 -0500
+
+    Added axios and got city API to work
+
+[33mcommit 65ccc54aa787615c4efc4fa40a5247af0792b554[m
+Merge: eb15315 22fe28b
+Author: Liudmila Zyrianova <liudmila.zyrianova@gmail.com>
+Date:   Wed Jan 9 11:16:08 2019 -0500
+
+    Added helpful files
+
+[33mcommit eb15315f220dbfad053b4f3e0e8ed36adb380b7f[m
+Author: Liudmila Zyrianova <liudmila.zyrianova@gmail.com>
+Date:   Wed Jan 9 11:13:10 2019 -0500
+
+    Removed unnecessary spaces
+
+[33mcommit c6366d56edea7a115736c04cc7f50ec31e1df370[m
+Author: Liudmila Zyrianova <liudmila.zyrianova@gmail.com>
+Date:   Wed Jan 9 11:09:33 2019 -0500
+
+    More Changes in city
+
+[33mcommit 22fe28bbe254b9b179cc5fa3b1036cacd3287add[m
+Author: kaizenc <imgtn159@gmail.com>
+Date:   Wed Jan 9 11:07:54 2019 -0500
+
+    API work complete for zip-search
+
+[33mcommit 79d0f1d1d10dac304ee9154058f1a0df317a1b9e[m
+Merge: 22b2c37 519ab81
+Author: kaizenc <imgtn159@gmail.com>
+Date:   Wed Jan 9 11:07:23 2019 -0500
+
+    Merge branch 'master' of https://github.com/kaizenc/Zip-City-API-Assignment
+
+[33mcommit 22b2c37988984b4ab77362d51e8f2c8ff9e5e1a7[m
+Author: Liudmila Zyrianova <liudmila.zyrianova@gmail.com>
+Date:   Wed Jan 9 11:05:31 2019 -0500
+
+    Add Basics of city-search
+
+[33mcommit 519ab8123412178b49c80c0a7db5516f0d38d03b[m
+Author: kaizenc <imgtn159@gmail.com>
+Date:   Wed Jan 9 11:04:58 2019 -0500
+
+    API working, ZipInfo and ParticularCity modified
+
+[33mcommit 9d8119d3fffb21322dc90aff35f83ca9b6f81c57[m
+Merge: 1645772 4cf1de7
+Author: Liudmila Zyrianova <liudmila.zyrianova@gmail.com>
+Date:   Wed Jan 9 10:53:06 2019 -0500
+
+    Merge remote-tracking branch 'origin' into liudmila
+
+[33mcommit 1645772b2718ac5df6d70c53398eb393ad846bd3[m
+Author: Liudmila Zyrianova <liudmila.zyrianova@gmail.com>
+Date:   Wed Jan 9 10:53:04 2019 -0500
+
+    First changes in city-search
+
+[33mcommit 4cf1de7fe975914e0d8e0cd91d714c36d7bf3f45[m
+Author: kaizenc <imgtn159@gmail.com>
+Date:   Wed Jan 9 10:49:24 2019 -0500
+
+    modified?
+
+[33mcommit 98a8f72a60c8ed30d56d7a46b00ce597048191e4[m
+Merge: a71fadc 7d0fe4f
+Author: kaizenc <imgtn159@gmail.com>
+Date:   Wed Jan 9 10:48:53 2019 -0500
+
+    Merge branch 'master' of https://github.com/kaizenc/Zip-City-API-Assignment
+
+[33mcommit a71fadce9c3725e63717f655558b0ec1624c36e2[m
+Merge: 6b7d5ad 07e29ae
+Author: kaizenc <imgtn159@gmail.com>
+Date:   Wed Jan 9 10:48:37 2019 -0500
+
+    Merge branch 'kaizen'
+
+[33mcommit 07e29aeca25f0251a3abd2d1d507060f39456b4d[m[33m ([m[1;31morigin/kaizen[m[33m)[m
+Author: kaizenc <imgtn159@gmail.com>
+Date:   Wed Jan 9 10:47:24 2019 -0500
+
+    API work, dont' know what i'm diong
+
+[33mcommit 7d0fe4fb2d74e8ebdec56230feeb4e571ef7878d[m
+Merge: 5329b0d 6b7d5ad
+Author: LiudmilaZyrianova239 <42779426+LiudmilaZyrianova239@users.noreply.github.com>
+Date:   Wed Jan 9 10:43:30 2019 -0500
+
+    Merge pull request #1 from kaizenc/liudmila
+    
+    Add ParticularCity component
+
+[33mcommit 6b7d5ad17f70a0822c1d4d94ad3e8feed0d275cb[m
+Author: Liudmila Zyrianova <liudmila.zyrianova@gmail.com>
+Date:   Wed Jan 9 10:40:06 2019 -0500
+
+    Add ParticularCity component
+
+[33mcommit 5329b0d1e0fefa1fd22e4d224da81a171804741d[m[33m ([m[1;32mmaster[m[33m)[m
+Author: kaizenc <imgtn159@gmail.com>
+Date:   Wed Jan 9 10:17:20 2019 -0500
+
+    making apps
+
+[33mcommit 79369c7ba870a29d982f57037511471047b9a230[m
+Author: Kaizen Castanos <kaizenc98@gmail.com>
+Date:   Wed Jan 9 10:11:59 2019 -0500
+
+    Initial commit
