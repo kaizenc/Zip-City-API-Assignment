@@ -72,7 +72,7 @@ class ZipInfo extends Component {
       }
       return(
         <div>
-        <p>{cities}</p>
+        {cities}
         <button className= "button" onClick={this.handleClick}>Try Again</button>
         </div>
       );
@@ -90,12 +90,12 @@ class ParticularCity extends Component {
         TotalWages,
     } = this.props.data;
     return (
-      <li>
-        <p>{LocationText}</p>
+      <div className="container">
+        <p className="locationText">{LocationText}</p>
         <p>Location: ({Lat}, {Long})</p>
         <p>Estimated Population: {EstimatedPopulation}</p>
         <p>Total Wages: {TotalWages}</p>
-      </li>
+      </div>
     );
   }
 }
@@ -103,7 +103,7 @@ class ParticularCity extends Component {
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className="centered">
         <ZipInfo zipcode="10016"/>
       </div>
     );
