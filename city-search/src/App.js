@@ -38,7 +38,7 @@ class CityInfo extends Component {
       });
   }
   handleChange (event) {
-    
+
     this.setState({
         city:  event.target.value
     });
@@ -49,7 +49,7 @@ class CityInfo extends Component {
           <div >
             <h1 className = "App-header">City Search </h1>
             <h2  className = "App-subheader">City: <input classname="inputLine" type='text' value = {this.state.city} onChange={this.handleChange}/></h2>
-              
+
               <button className= "button" onClick={this.handleClick}>Submit</button>
           </div>
       );
@@ -57,10 +57,10 @@ class CityInfo extends Component {
       this.fetchCityData(this.state.city);
       var zipcodes = (<p>City Not Found</p>);
       if(this.state.getSuccess){
-        var zipcodes = this.state.zipcodes.map((zipcode)=>
+        zipcodes = this.state.zipcodes.map((zipcode)=>
         <ParticularZip data={zipcode}/>
         );
-      }; 
+      };
     var correctCity = this.state.city.toLowerCase();
     correctCity = correctCity.charAt(0).toUpperCase() + correctCity.slice(1);
     return(
@@ -82,7 +82,7 @@ class ParticularZip extends Component {
       return (
           <li>
               <p>{zip}</p>
-              
+
           </li>
       );
   }
