@@ -1,3 +1,22 @@
+/*Custom CSS Code*/
+.centered{
+  text-align: center;
+  padding: 20px 30rem 50px 30rem;
+}
+.container{
+  padding: 1rem 2rem 2rem;
+  margin: 1rem;
+  border-radius: 0.5rem;
+  min-width: 9rem;
+  width: auto;
+  border: solid 13px rgba(0, 0, 0, 0.05);
+  background-color: #FDEDEC;
+}
+.locationText{
+  text-shadow: #FC0 1px 0 10px;
+  font-weight: bold;
+}
+
 .App {
   text-align: center;
 }
