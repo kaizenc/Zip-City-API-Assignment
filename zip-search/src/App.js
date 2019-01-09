@@ -1,28 +1,7 @@
 import React, { Component } from 'react';
+import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
-
-class ParticularCity extends Component {
-
-  render() {
-      var {
-          locationText,
-          lat,
-          long,
-          estimatedPopulation,
-          totalWages,
-      } = this.props.data;
-      return (
-          <li>
-              <p>{locationText}</p>
-              <p>{lat}</p>
-              <p>{long}</p>
-              <p>{estimatedPopulation}</p>
-              <p>{totalWages}</p>
-          </li>
-      );
-  }
-}
 
 class ZipInfo extends Component {
   constructor(props){
@@ -69,6 +48,26 @@ class ZipInfo extends Component {
   }
 }
 
+class ParticularCity extends Component {
+  render(){
+      var {
+          LocationText,
+          Lat,
+          Long,
+          EstimatedPopulation,
+          TotalWages,
+      } = this.props.data;
+      return (
+          <li>
+              <p>{LocationText}</p>
+              <p>{Lat}</p>
+              <p>{Long}</p>
+              <p>{EstimatedPopulation}</p>
+              <p>{TotalWages}</p>
+          </li>
+      );
+  }
+}
 
 class App extends Component {
   render() {
