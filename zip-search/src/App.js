@@ -92,10 +92,9 @@ class ParticularCity extends Component {
     return (
       <li>
         <p>{LocationText}</p>
-        <p>{Lat}</p>
-        <p>{Long}</p>
-        <p>{EstimatedPopulation}</p>
-        <p>{TotalWages}</p>
+        <p>Location: ({Lat}, {Long})</p>
+        <p>Estimated Population: {EstimatedPopulation}</p>
+        <p>Total Wages: {TotalWages}</p>
       </li>
     );
   }
