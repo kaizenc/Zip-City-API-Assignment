@@ -60,12 +60,18 @@ class App extends Component {
       );                
   } else {
       return (
+        <div >
+          <div>
+            <CityInfo />
+          </div>
+
           <div className = "divMain">
               <p>You can edit First name and Last name here: </p>
               <p><input className= "textSecond" type='text' value={this.state.fname} onChange={this.handleFNameChange}/></p>
               <p><input className= "textSecond" type='text' value={this.state.lname} onChange={this.handleLNameChange}/></p>
               <p><button className= "buttom" onClick={this.handleClickSave}>Save</button></p>
               <p><button className= "buttom" onClick={this.handleClickCancel}>Cancel</button></p>
+         </div>
          </div>
       ); 
   }
