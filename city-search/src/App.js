@@ -8,7 +8,11 @@ class CityInfo extends Component {
     this.state = {
       firstPage: true,
       zipcodes: ["10010"] ,
+<<<<<<< HEAD
       city: "QUEENS",    
+=======
+      city: "QUEENS",
+>>>>>>> f7c1305db0571749e1b24682590642b5c50a156b
     };
     this.handleClick = this.handleClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -18,12 +22,12 @@ class CityInfo extends Component {
     axios.get("https://ctp-zip-api.herokuapp.com/city/" + city)
     .then(response => {
       var result = response.data;
-      this.setState({zip:result});
+      this.setState({zipcodes:result});
     })
     .catch(err => console.log(err));
   }
 
-  handleClick() {    
+  handleClick() {
       this.setState ({
           firstPage : false,
       });
@@ -36,13 +40,13 @@ class CityInfo extends Component {
   render() {
     if (this.state.firstPage) {
       return (
-          <div >                
+          <div >
               <input type='text' value = {this.state.city} onChange={this.handleChange}/>
               <button className= "buttom" onClick={this.handleClick}>Edit</button>
-          </div> 
-      );                
+          </div>
+      );
   } else {
-      this.fetchCityData(this.props.city);
+      this.fetchCityData(this.state.city);
       var zipcodes = this.state.zipcodes.map((zipcode)=>
       <ParticularZip data={zipcode}/>
     );
@@ -72,7 +76,7 @@ class App extends Component {
             <CityInfo />
           </div>
 
-      ); 
+      );
   }
 }
 
